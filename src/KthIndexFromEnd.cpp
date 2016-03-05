@@ -11,6 +11,33 @@ ERROR CASES: Return '\0' for invalid inputs.
 NOTES:
 */
 
-char KthIndexFromEnd(char *str, int K) {
-	return '\0';
+char KthIndexFromEnd(char *str, int K) 
+{
+	int i = 0, j = 0;
+	if (str == '\0' || K < 0)
+	{
+		return '\0';
+	}
+	else
+	{
+
+		while (K)
+		{
+			if (K && str[j] != '\0')
+			{
+				K--;
+				j++;						// Travsersal used in linked list to find k th node from last
+			}								// O(n) complexcity in finding kth letter from last
+			else
+				return '\0';
+
+		}
+
+		for (; str[j] != '\0'; j++)
+		{
+			i++;
+		}
+
+	}
+	return str[i - 1];
 }
